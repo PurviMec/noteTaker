@@ -1,0 +1,27 @@
+{
+  "name": "notetaker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PurviMec/noteTaker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PurviMec/noteTaker/issues"
+  },
+  "homepage": "https://github.com/PurviMec/noteTaker#readme"
+}
