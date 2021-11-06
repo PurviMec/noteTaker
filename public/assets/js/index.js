@@ -28,7 +28,7 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-function writeInNotes(notes){
+function writeIntoNotes(notes){
   return fs.writeFile('./db/db.json', JSON.stringify(notes, null, 2), (err) => {
     if (err) {
         return err;
@@ -76,13 +76,14 @@ const saveNote = (note) =>
       alert('You have added new note to your notes!');
     });
 
-const deleteNote = (id) =>
-  fetch(`/api/notes/${id}`, {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  });
+    function deleteNote(id) {
+      return fetch(`/api/notes/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+    }
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);

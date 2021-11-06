@@ -78,6 +78,17 @@ app.post('/api/notes', (req, res) => {
     }
 });
 
+app.delete('/api/notes/:id', (req, res) => {
+    const notesIndex = parseInt(req.params.id) -1;
+    // ids start at 1 instead of 0
+    notes.splice(notesIndex, 1)
+
+    writeIntoNotes(notes);
+
+    res.status(200).json({ message: 'success' })
+})
+
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, './public/index.html'));
 });
