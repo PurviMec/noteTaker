@@ -1,4 +1,5 @@
-const { response } = require("express");
+
+//const {express} = require('../../../db/db.json');
 
 let noteTitle;
 let noteText;
@@ -27,26 +28,46 @@ const hide = (elem) => {
 // activeNote is used to keep track of the note in the textarea
 let activeNote = {};
 
-const getNotes = () =>
-  fetch('/api/notes', {
+function writeInNotes(notes){
+  return fs.writeFile('./db/db.json', JSON.stringify(notes, null, 2), (err) => {
+    if (err) {
+        return err;
+    } 
+  })
+}
+
+function getNotes() {
+  return fetch('/api/notes', {
     method: 'GET',
     headers: {
-      'Content-Type': 'application/json',
-    },
+      'Content-Type': 'application/json'
+    }
   });
+}
+
+  //.then (response => {
+   // if (!response.ok){
+     // return alert('Error: ' + response.statusText);
+   // }
+    //return response.json(notes);
+ // })
+  //.then (notes => {
+    //console.log(notes);
+    
+ // });
 
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
-    'Content-Type': 'application/json'
+      'Content-Type': 'application/json'
     },
     body: JSON.stringify(note),
   })
     .then(response => {
       if (response.ok){
-        return response.json()
+        return response.json();
       }
       alert('Error:' + response.statusText);
     })
@@ -131,9 +152,10 @@ const handleRenderSaveBtn = () => {
 
 // Render the list of note titles
 const renderNoteList = async (notes) => {
+  noteIdCounter = 1;
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
-    noteList.forEach((el) => (el.innerHTML = ''));
+    noteList.forEach(el => (el.innerHTML = ''));
   }
 
   let noteListItems = [];
@@ -172,6 +194,9 @@ const renderNoteList = async (notes) => {
   }
 
   jsonNotes.forEach((note) => {
+    note.id = noteIdCounter;
+    noteIdCounter++;
+
     const li = createLi(note.title);
     li.dataset.note = JSON.stringify(note);
 

@@ -11,6 +11,21 @@
     {
       "title": "Send Emails",
       "text": "Confirm appointment with doctor."
+    },
+    {
+      "title": "Application",
+      "text": "Submit application by end of next week.",
+      "id": "3"
+    },
+    {
+      "title": "Appointment",
+      "text": "Get doctor's appointment.",
+      "id": "4"
+    },
+    {
+      "title": "Appointment",
+      "text": "Confirm appointment with doctor.",
+      "id": "5"
     }
   ]
 }
