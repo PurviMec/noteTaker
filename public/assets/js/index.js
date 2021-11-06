@@ -45,17 +45,6 @@ function getNotes() {
   });
 }
 
-  //.then (response => {
-   // if (!response.ok){
-     // return alert('Error: ' + response.statusText);
-   // }
-    //return response.json(notes);
- // })
-  //.then (notes => {
-    //console.log(notes);
-    
- // });
-
 const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',

@@ -26,6 +26,16 @@
       "title": "Appointment",
       "text": "Confirm appointment with doctor.",
       "id": "5"
+    },
+    {
+      "title": "Holiday Cards",
+      "text": "make holiday cards by end of this month.",
+      "id": "6"
+    },
+    {
+      "title": "Reminder",
+      "text": "Send reminders to customers before noon.",
+      "id": "7"
     }
   ]
 }
