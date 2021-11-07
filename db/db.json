@@ -1,36 +1,5 @@
 {
   "notes": [
-    {
-      "title": "title",
-      "text": "abc"
-    },
-    {
-      "title": "Send Emails",
-      "text": "fhbwekjhfgilewrghil"
-    },
-    {
-      "title": "Send Emails",
-      "text": "Confirm appointment with doctor."
-    },
-    {
-      "title": "Application",
-      "text": "Submit application by end of next week."
-    },
-    {
-      "title": "Appointment",
-      "text": "Get doctor's appointment."
-    },
-    {
-      "title": "Appointment",
-      "text": "Confirm appointment with doctor."
-    },
-    {
-      "title": "Holiday Cards",
-      "text": "make holiday cards by end of this month."
-    },
-    {
-      "title": "Reminder",
-      "text": "Send reminders to customers before noon."
-    }
+    
   ]
 }
