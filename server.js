@@ -74,7 +74,9 @@ app.post('/api/notes', (req, res) => {
         res.status(400).send('Please formate notes properly!');
     }else{
         const note = createNewNote(req.body, notes);
-        res.json(note);
+        //res.json(note);
+        writeIntoNotes(notes);
+
     }
 });
 
