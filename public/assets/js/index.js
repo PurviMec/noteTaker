@@ -45,7 +45,7 @@ function getNotes() {
   });
 }
 
-const saveNote = (note) =>
+const saveNote = (note) => {
   fetch('/api/notes', {
     method: 'POST',
     headers: {
@@ -63,6 +63,8 @@ const saveNote = (note) =>
       console.log(postResponse);
       alert('You have added new note to your notes!');
     });
+
+  }
 
     function deleteNote(id) {
       return fetch(`/api/notes/${id}`, {
