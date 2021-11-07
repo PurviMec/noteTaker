@@ -45,25 +45,36 @@ function getNotes() {
   });
 }
 
-const saveNote = (note) =>
-  fetch('/api/notes', {
+function saveNote(note) {
+  delete note.id
+
+  return fetch('/api/notes', {
     method: 'POST',
     headers: {
-      Accept: 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(note),
-  })
-    .then(response => {
-      if (response.ok){
-        return response.json();
-      }
-      alert('Error:' + response.statusText);
-    })
-    .then(postResponse => {
-      console.log(postResponse);
-      alert('You have added new note to your notes!');
-    });
+    body: JSON.stringify(note)
+  });
+}
+//const saveNote = (note) =>
+  //fetch('/api/notes', {
+    ////method: 'POST',
+    //headers: {
+      //Accept: 'application/json',
+      //'Content-Type': 'application/json'
+    //},
+    //body: JSON.stringify(note),
+  //})
+    //.then(response => {
+      //if (response.ok){
+      //  return response.json();
+      //}
+      //alert('Error:' + response.statusText);
+    //})
+    //.then(postResponse => {
+      //console.log(postResponse);
+      //alert('You have added new note to your notes!');
+    //});
 
     function deleteNote(id) {
       return fetch(`/api/notes/${id}`, {
