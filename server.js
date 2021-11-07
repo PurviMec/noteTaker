@@ -69,20 +69,19 @@ app.get('/api/notes/:id', (req, res) => {
 });  
 
 app.post('/api/notes', (req, res) => {
-    //req.body.id = notes.length.toString();
-    //if (!validateData(req.body)){
-        //res.status(400).send('Please formate notes properly!');
-    //}else{
+    req.body.id = notes.length.toString();
+    if (!validateData(req.body)){
+        res.status(400).send('Please formate notes properly!');
+    }else{
         //const note = createNewNote(req.body, notes);
         //res.json(note);
-    //}
-
-    notes.push(req.body);
+        notes.push(req.body);
 
     updateNotes(notes);
 
     res.status(200).json({ message: 'success' })
 
+    }
 });
 
 app.delete('/api/notes/:id', (req, res) => {
