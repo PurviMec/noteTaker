@@ -4,7 +4,7 @@
 I WANT to make a note taker so I can keep track of my due tasks and delete it if its done.
 
 ## URL of deployed application:
-http://localhost:3001/notes
+http://localhost:3001
 
 ## URL of deployed app on heroku:
 https://murmuring-escarpment-08814.herokuapp.com/notes
