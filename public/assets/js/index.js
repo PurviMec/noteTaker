@@ -45,8 +45,9 @@ function getNotes() {
   });
 }
 
-const saveNote = (note) =>
-  fetch('/api/notes', {
+const saveNote = (note) => {
+  delete note.id
+  return fetch('/api/notes', {
     method: 'POST',
     headers: {
       Accept: 'application/json',
@@ -64,6 +65,7 @@ const saveNote = (note) =>
       console.log(postResponse);
       alert('You have added new note to your notes!');
     });
+}   
 
    //function saveNote(note) {
     //delete note.id
