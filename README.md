@@ -13,7 +13,7 @@ https://murmuring-escarpment-08814.herokuapp.com/notes
 https://github.com/PurviMec/noteTaker.git
 
 ## ScreenShot!
-[noteTaker](https://user-images.githubusercontent.com/86253830/140625817-09af6fb1-7070-4649-8750-af74d3dec5b3.jpg)
+![noteTaker](https://user-images.githubusercontent.com/86253830/140625817-09af6fb1-7070-4649-8750-af74d3dec5b3.jpg)
 
 ## Made with help of 
 - HTML
