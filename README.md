@@ -23,7 +23,7 @@ https://github.com/PurviMec/noteTaker.git
 - express.js
 
 ## Contribution
-Made with ❤️ by Purvi Mecwan
+Made with ❤️  by Purvi Mecwan
 
 ### ©️2021 NoteTaker, Inc
 
