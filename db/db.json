@@ -2,43 +2,35 @@
   "notes": [
     {
       "title": "title",
-      "text": "abc",
-      "id":  "1"
+      "text": "abc"
     },
     {
       "title": "Send Emails",
-      "text": "fhbwekjhfgilewrghil",
-      "id": "2"
+      "text": "fhbwekjhfgilewrghil"
     },
     {
       "title": "Send Emails",
-      "text": "Confirm appointment with doctor.",
-      "id":"3"
+      "text": "Confirm appointment with doctor."
     },
     {
       "title": "Application",
-      "text": "Submit application by end of next week.",
-      "id": "4"
+      "text": "Submit application by end of next week."
     },
     {
       "title": "Appointment",
-      "text": "Get doctor's appointment.",
-      "id": "5"
+      "text": "Get doctor's appointment."
     },
     {
       "title": "Appointment",
-      "text": "Confirm appointment with doctor.",
-      "id": "6"
+      "text": "Confirm appointment with doctor."
     },
     {
       "title": "Holiday Cards",
-      "text": "make holiday cards by end of this month.",
-      "id": "7"
+      "text": "make holiday cards by end of this month."
     },
     {
       "title": "Reminder",
-      "text": "Send reminders to customers before noon.",
-      "id": "8"
+      "text": "Send reminders to customers before noon."
     }
   ]
 }
