@@ -32,7 +32,7 @@ function createNewNote (body, notesArray){
         JSON.stringify({ notes: notesArray }, null, 2)
     );
 
-    return note;
+   return note;
 }
 
 function findById(id, notesArray) {
@@ -74,15 +74,17 @@ app.post('/api/notes', (req, res) => {
         res.status(400).send('Please formate notes properly!');
     }else{
         const note = createNewNote(req.body, notes);
-        //res.json(note);
-        notes.push(req.body);
-
-        updateNotes(notes);
-
-        res.status(200).json({ message: 'success' });
-
+        res.json(note);
     }
 });
+
+app.post('/api/notes', (req, res) => {
+    notes.push(req.body);
+
+    writeIntoNotes(notes);
+
+    res.status(200).json({ message: 'success' })
+})
 
 app.delete('/api/notes/:id', (req, res) => {
     const notesIndex = parseInt(req.params.id) -1;

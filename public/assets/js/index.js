@@ -45,10 +45,11 @@ function getNotes() {
   });
 }
 
-const saveNote = (note) => 
+const saveNote = (note) =>
   fetch('/api/notes', {
     method: 'POST',
     headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(note),
@@ -64,16 +65,27 @@ const saveNote = (note) =>
       alert('You have added new note to your notes!');
     });
 
+   function saveNote(note) {
+    delete note.id
   
+    return fetch('/api/notes', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(note)
+    });
+  }
+   
 
-    function deleteNote(id) {
-      return fetch(`/api/notes/${id}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      });
-    }
+function deleteNote(id) {
+  return fetch(`/api/notes/${id}`, {
+       method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  }
 
 const renderActiveNote = () => {
   hide(saveNoteBtn);
