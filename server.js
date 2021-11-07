@@ -59,14 +59,14 @@ app.get('/api/notes', (req, res) => {
     res.json(results);
 });
 
-//app.get('/api/notes/:id', (req, res) => {
-    //const result = findById(req.params.id, notes);
-    //if (result){
-        //res.json(result);
-    //}else{
-        //res.send(404);
-    //}
-//});  
+app.get('/api/notes/:id', (req, res) => {
+    const result = findById(req.params.id, notes);
+    if (result){
+        res.json(result);
+    }else{
+        res.send(404);
+    }
+});  
 
 app.post('/api/notes', (req, res) => {
     req.body.id = notes.length.toString();
@@ -78,15 +78,14 @@ app.post('/api/notes', (req, res) => {
     }
 });
 
-//app.delete('/api/notes/:id', (req, res) => {
-    //const notesIndex = parseInt(req.params.id) -1;
-    // ids start at 1 instead of 0
-    //notes.splice(notesIndex, 1)
+app.delete('/api/notes/:id', (req, res) => {
+    const notesIndex = parseInt(req.params.id) -1;
+    notes.splice(notesIndex, 1)
 
-    //writeIntoNotes(notes);
+    writeIntoNotes(notes);
 
-    //res.status(200).json({ message: 'success' })
-//})
+    res.status(200).json({ message: 'success' })
+})
 
 
 app.get('/', (req, res) => {
