@@ -73,13 +73,13 @@ app.post('/api/notes', (req, res) => {
     if (!validateData(req.body)){
         res.status(400).send('Please formate notes properly!');
     }else{
-        //const note = createNewNote(req.body, notes);
+        const note = createNewNote(req.body, notes);
         //res.json(note);
         notes.push(req.body);
 
-    updateNotes(notes);
+        updateNotes(notes);
 
-    res.status(200).json({ message: 'success' })
+        res.status(200).json({ message: 'success' });
 
     }
 });
