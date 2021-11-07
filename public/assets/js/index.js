@@ -65,17 +65,17 @@ const saveNote = (note) =>
       alert('You have added new note to your notes!');
     });
 
-   function saveNote(note) {
-    delete note.id
+   //function saveNote(note) {
+    //delete note.id
   
-    return fetch('/api/notes', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(note)
-    });
-  }
+    //return fetch('/api/notes', {
+     // method: 'POST',
+     // headers: {
+       // 'Content-Type': 'application/json'
+     // },
+     // body: JSON.stringify(note)
+    //});
+  //}
    
 
 function deleteNote(id) {
@@ -87,21 +87,20 @@ function deleteNote(id) {
     });
   }
 
-const renderActiveNote = () => {
-  hide(saveNoteBtn);
-
-  if (activeNote.id) {
-    noteTitle.setAttribute('readonly', true);
-    noteText.setAttribute('readonly', true);
-    noteTitle.value = activeNote.title;
-    noteText.value = activeNote.text;
-  } else {
-    noteTitle.removeAttribute('readonly');
-    noteText.removeAttribute('readonly');
-    noteTitle.value = '';
-    noteText.value = '';
-  }
-};
+  const renderActiveNote = () => {
+    hide(saveNoteBtn);
+    if (activeNote.id) {
+      noteTitle.setAttribute('readonly', true);
+      noteText.setAttribute('readonly', true);
+      noteTitle.value = activeNote.title;
+      noteText.value = activeNote.text;
+    } else {
+      noteTitle.removeAttribute('readonly');
+      noteText.removeAttribute('readonly');
+      noteTitle.value = '';
+      noteText.value = '';
+    }
+  };
 
 const handleNoteSave = () => {
   const newNote = {
